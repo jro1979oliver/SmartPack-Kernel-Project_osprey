@@ -139,7 +139,6 @@
 		qcom,msm-snd-card-id = <0>;
 		qcom,msm-codec-type = "internal";
 		qcom,msm-ext-pa = <0>;
-		qcom,msm-mclk-freq = <9600000>;
 		qcom,msm-mbhc-hphl-swh = <0>;
 		qcom,msm-mbhc-gnd-swh = <0>;
 		qcom,msm-hs-micbias-type = "internal";
@@ -700,7 +699,7 @@
 		label = "stml0xx-inputs";
 
 		stml0xx_inputs_default: stml0xx-inputs {
-			bias-pull-down;         /* pull down */
+			bias-disable;         /* no pull */
 			drive-strength = <2>;
 		};
 	};
