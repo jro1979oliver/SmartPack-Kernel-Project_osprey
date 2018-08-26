@@ -42,6 +42,8 @@ dump_boot;
 # begin ramdisk changes
 
 # init.rc
+backup_file init.rc;
+grep "import /init.spectrum.rc" init.rc >/dev/null || sed -i '1,/.*import.*/s/.*import.*/import \/init.spectrum.rc\n&/' init.rc
 
 # init.tuna.rc
 
