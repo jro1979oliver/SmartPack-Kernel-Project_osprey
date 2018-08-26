@@ -34,7 +34,7 @@
 #
 # ***** ***** *Variables to be configured manually* ***** ***** #
 
-TOOLCHAIN="/home/sunil/UBERTC-arm-eabi-8.2/bin/arm-none-eabi-"
+TOOLCHAIN="/home/sunil/UBERTC-arm-eabi-8.2.1/bin/arm-linux-gnueabi-"
 
 ARCHITECTURE="arm"
 
