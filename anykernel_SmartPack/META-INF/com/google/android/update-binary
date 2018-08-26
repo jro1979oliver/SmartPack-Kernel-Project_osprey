@@ -71,7 +71,7 @@ if [ -f /tmp/anykernel/banner ]; then
   ui_print " ";
 fi;
 
-ui_print "SmartPack-Kernel for Moto G3 2015 (osprey)";
+ui_print "SmartPack-Kernel $(cat /tmp/anykernel/ramdisk/version) for Moto G3 2015 (osprey)";
 if [ -f /tmp/anykernel/version ]; then
   ui_print " ";
   while IFS='' read -r line || $bb [[ -n "$line" ]]; do

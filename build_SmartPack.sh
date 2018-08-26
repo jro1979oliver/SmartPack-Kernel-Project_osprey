@@ -97,6 +97,8 @@ make -j$NUM_CPUS -C $(pwd) O=$BUILD_DIR
 if [ -e $KERNEL_IMAGE ]; then
 	echo -e $COLOR_GREEN"\n copying zImage to anykernel directory\n"$COLOR_NEUTRAL
 	cp $KERNEL_IMAGE $ANYKERNEL_DIR/zImage
+	# adding version tag to ramdisk in order to access from the Kernel Manager
+	echo $KERNEL_VERSION > $ANYKERNEL_DIR/ramdisk/version
 	echo -e $COLOR_GREEN"\n generating recovery flashable zip file\n"$COLOR_NEUTRAL
 	cd $ANYKERNEL_DIR && zip -r9 $KERNEL_NAME-$KERNEL_VARIANT-$KERNEL_VERSION-$KERNEL_DATE.zip * -x README.md $KERNEL_NAME-$KERNEL_VARIANT-$KERNEL_VERSION-$KERNEL_DATE.zip && cd ..
 	echo -e $COLOR_GREEN"\n cleaning...\n"$COLOR_NEUTRAL
@@ -105,6 +107,9 @@ if [ -e $KERNEL_IMAGE ]; then
 		mkdir $RELEASE_DIR
 	fi
 	rm $ANYKERNEL_DIR/zImage && mv $ANYKERNEL_DIR/$KERNEL_NAME* $RELEASE_DIR
+	if [ -f $ANYKERNEL_DIR/ramdisk/version ]; then
+		rm -f $ANYKERNEL_DIR/ramdisk/version
+	fi
 	if [ "y" == "$PREPARE_RELEASE" ]; then
 		echo -e $COLOR_GREEN"\n Preparing for kernel release\n"$COLOR_NEUTRAL
 		cp $RELEASE_DIR/$KERNEL_NAME-$KERNEL_VARIANT-$KERNEL_VERSION-$KERNEL_DATE.zip kernel-release/$KERNEL_NAME-$KERNEL_VARIANT.zip
