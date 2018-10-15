@@ -1,5 +1,9 @@
 # Change-logs
 
+## 3. Oct 15, 2018
+*Release status: beta-v3*
+Changes: thermal: msm_thermal: Added advanced parameters. cpufreq: Added tripndroid & Impulse govs. cpufreq: implement zen-tune v4.10 for Ondemand gov. fs: added sdFAT file system. A lot of optimizations and patched for everywhere to make the kernel much snappier.
+
 ## 2. Sep 07, 2018
 *Release status: beta-v2*
 Changes: Add control over Min Display Backlight. Added Interactive Pro, Pegasusq Yankactive & Alucard Governers. Add MSM Sleeper CPU Hotplug. Add OS check to the anykernel script so that it won't be installed on any android version except Android 8.1.0 (Oreo).
