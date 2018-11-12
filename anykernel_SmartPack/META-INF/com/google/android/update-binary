@@ -74,9 +74,7 @@ fi;
 ui_print "SmartPack-Kernel $(cat /tmp/anykernel/ramdisk/version) for Moto G3 2015 (osprey)";
 if [ -f /tmp/anykernel/version ]; then
   ui_print " ";
-  while IFS='' read -r line || $bb [[ -n "$line" ]]; do
-    ui_print "$line";
-  done < /tmp/anykernel/version;
+  ui_print "$(cat /tmp/anykernel/version)";
   ui_print " ";
 fi;
 ui_print " ";
@@ -103,7 +101,7 @@ if [ "$(file_getprop /tmp/anykernel/anykernel.sh do.devicecheck)" == 1 ]; then
       break;
     fi;
   done;
-  ui_print " ";
+  ui_print "Device is compatible...";
   if [ "$match" != 1 ]; then
     abort "Unsupported device. Aborting...";
   fi;
@@ -122,6 +120,7 @@ savedpre="$LD_PRELOAD";
 unset LD_LIBRARY_PATH;
 unset LD_PRELOAD;
 
+ui_print "Installing...";
 for i in $($bb --list); do
   $bb ln -s $bb /tmp/anykernel/bin/$i;
 done;

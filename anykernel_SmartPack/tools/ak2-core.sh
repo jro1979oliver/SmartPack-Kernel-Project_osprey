@@ -121,6 +121,15 @@ unpack_ramdisk() {
   if [ $? != 0 -o -z "$(ls $ramdisk)" ]; then
     ui_print " "; ui_print "Unpacking ramdisk failed. Aborting..."; exit 1;
   fi;
+
+  if [ -f $ramdisk/version ]; then
+    ui_print "Updating over $(cat $ramdisk/version)...";
+    ui_print " ";
+  else
+    ui_print "Installing SmartPack-Kernel...";
+    ui_print " ";
+  fi
+
   test ! -z "$(ls /tmp/anykernel/rdtmp)" && cp -af /tmp/anykernel/rdtmp/* $ramdisk;
 }
 dump_boot() {
@@ -213,11 +222,18 @@ flash_boot() {
     if [ -f *-oslevel ]; then
       oslvl=`cat *-oslevel`;
     fi;
+    if [ -f *-headerversion ]; then
+      hdrver=`cat *-headerversion`;
+    fi;
     if [ -f *-second ]; then
       second=`ls *-second`;
       second="--second $split_img/$second";
       secondoff=`cat *-secondoff`;
       secondoff="--second_offset $secondoff";
+    fi;
+    if [ -f *-recoverydtbo ]; then
+      recoverydtbo=`ls *-recoverydtbo`;
+      recoverydtbo="--recovery_dtbo $split_img/$recoverydtbo";
     fi;
     if [ -f *-hash ]; then
       hash=`cat *-hash`;
@@ -273,7 +289,7 @@ flash_boot() {
   elif [ -f "$bin/pxa-mkbootimg" ]; then
     $bin/pxa-mkbootimg --kernel $kernel --ramdisk $rd $second --cmdline "$cmdline" --board "$board" --base $base --pagesize $pagesize --kernel_offset $kerneloff --ramdisk_offset $ramdiskoff $secondoff --tags_offset "$tagsoff" --unknown $unknown $dtb --output boot-new.img;
   else
-    $bin/mkbootimg --kernel $kernel --ramdisk $rd $second --cmdline "$cmdline" --board "$board" --base $base --pagesize $pagesize --kernel_offset $kerneloff --ramdisk_offset $ramdiskoff $secondoff --tags_offset "$tagsoff" --os_version "$osver" --os_patch_level "$oslvl" $hash $dtb --output boot-new.img;
+    $bin/mkbootimg --kernel $kernel --ramdisk $rd $second $recoverydtbo --cmdline "$cmdline" --board "$board" --base $base --pagesize $pagesize --kernel_offset $kerneloff --ramdisk_offset $ramdiskoff $secondoff --tags_offset "$tagsoff" --os_version "$osver" --os_patch_level "$oslvl" --header_version "$hdrver" $hash $dtb --output boot-new.img;
   fi;
   if [ $? != 0 ]; then
     ui_print " "; ui_print "Repacking image failed. Aborting..."; exit 1;
@@ -569,6 +585,8 @@ case $block in
             ui_print " "; ui_print "Unable to determine mtd $block partition. Aborting..."; exit 1;
           fi;
           target=/dev/mtd/$mtd;
+        elif [ -e /dev/block/by-name/$part ]; then
+          target=/dev/block/by-name/$part;
         elif [ -e /dev/block/bootdevice/by-name/$part ]; then
           target=/dev/block/bootdevice/by-name/$part;
         elif [ -e /dev/block/platform/*/by-name/$part ]; then
