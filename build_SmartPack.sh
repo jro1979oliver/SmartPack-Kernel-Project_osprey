@@ -107,9 +107,6 @@ if [ -e $KERNEL_IMAGE ]; then
 		mkdir $RELEASE_DIR
 	fi
 	rm $ANYKERNEL_DIR/zImage && mv $ANYKERNEL_DIR/$KERNEL_NAME* $RELEASE_DIR
-	if [ -f $ANYKERNEL_DIR/ramdisk/version ]; then
-		rm -f $ANYKERNEL_DIR/ramdisk/version
-	fi
 	if [ "y" == "$PREPARE_RELEASE" ]; then
 		echo -e $COLOR_GREEN"\n Preparing for kernel release\n"$COLOR_NEUTRAL
 		cp $RELEASE_DIR/$KERNEL_NAME-$KERNEL_VARIANT-$KERNEL_VERSION-$KERNEL_DATE.zip kernel-release/$KERNEL_NAME-$KERNEL_VARIANT.zip
