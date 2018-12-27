@@ -42,7 +42,7 @@ KERNEL_NAME="SmartPack-Kernel"
 
 KERNEL_VARIANT="osprey"	# please leave as such
 
-KERNEL_VERSION="beta-v3"   # leave as such, if no specific version tag
+KERNEL_VERSION="beta-v4"   # leave as such, if no specific version tag
 
 KERNEL_DEFCONFIG="osprey_defconfig"
 

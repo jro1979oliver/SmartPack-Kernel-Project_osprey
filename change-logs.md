@@ -1,5 +1,9 @@
 # Change-logs
 
+## 4. Dec 27, 2018
+*Release status: beta-v4*
+Changes: Unified to work on both Oreo& Pie. Incorporating recent patches from osm0sis's AnyKernel2 repo. Ramdisk: removed spectrum support and added SmartPack boot script. Misc changes.
+
 ## 3. Oct 15, 2018
 *Release status: beta-v3*
 Changes: thermal: msm_thermal: Added advanced parameters. cpufreq: Added tripndroid & Impulse govs. cpufreq: implement zen-tune v4.10 for Ondemand gov. fs: added sdFAT file system. A lot of optimizations and patched for everywhere to make the kernel much snappier.
