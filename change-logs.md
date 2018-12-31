@@ -1,5 +1,9 @@
 # Change-logs
 
+## 5. Dec 31, 2018
+*Release status: beta-v5*
+Changes: Added I/O schedule switcher, a driver to change the I/O scheduler when the screen turns off. CPU Govs: Added Chill & Adaptive. CPU: Added MSM Limiter driver v5.3. MSM Thermal: Added IntelliThermal v3.1. binder: some patches suggested by @DanGLES3. SmartPack boot script: a bunch of updates (credits mainly to @DanGLES3). Misc: set westwood as the default tcp. Misc. Update wireguard. Bunch of other changes. Please check my Github source for more info.
+
 ## 4. Dec 27, 2018
 *Release status: beta-v4*
 Changes: Unified to work on both Oreo& Pie. Incorporating recent patches from osm0sis's AnyKernel2 repo. Ramdisk: removed spectrum support and added SmartPack boot script. Misc changes.
