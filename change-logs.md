@@ -1,10 +1,14 @@
 # Change-logs
 
-## 7. Jan 19, 2018
+## 8. Feb 01, 2019
+*Release status: beta-v8*
+Changes: Updated & enabled cpusets. Some commit to improving memory management. 
+
+## 7. Jan 19, 2019
 *Release status: beta-v7*
 Changes: Implemented interface to configure Linux PrintK logging. GPU: msm_adreno_tz: added adrenoboost (3 levels of boosting). Removed buggy features like Intelli thermal, MSM limiter, Adreno Idler etc. Wakelocks: cleanups and updated the list of default blocked wakelocks.
 
-## 6. Jan 10, 2018
+## 6. Jan 10, 2019
 *Release status: beta-v6*
 Changes: Added a bunch of *kgsl* commits to improve the GPU performance. SmartPack boot script: Tweaked Alucard hotplug, impulse CPU Freq  gov and more (credits @DanGLES3).
 
