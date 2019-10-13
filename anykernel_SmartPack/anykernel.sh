@@ -47,12 +47,12 @@ android_ver=$(file_getprop /system/build.prop "ro.build.version.release");
 ui_print " ";
 ui_print "Android $android_ver detected...";
 case "$android_ver" in
-8.1.0|9) support_status="supported";;
+8.1.0|9|10) support_status="supported";;
   *) support_status="unsupported";;
 esac;
 ui_print " ";
 if [ ! "$support_status" == "supported" ]; then
-  ui_print "This version of SmartPack-Kernel is only compatible with android versions 8.1.0 & 9!";
+  ui_print "This version of SmartPack-Kernel is only compatible with android versions 8.1.0, 9 & 10!";
   exit 1;
 fi;
 
