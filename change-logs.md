@@ -1,5 +1,9 @@
 # Change-logs
 
+## 8. Oct 13, 2019
+*Release status: beta-v9*
+Changes: Compatible with Oreo, Pie and Q. Added memfd backports.Compiled with kernel toolchain 8.3-2019.03 
+
 ## 8. Feb 01, 2019
 *Release status: beta-v8*
 Changes: Updated & enabled cpusets. Some commit to improving memory management. 
