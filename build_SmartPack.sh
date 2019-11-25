@@ -34,7 +34,7 @@
 #
 # ***** ***** *Variables to be configured manually* ***** ***** #
 
-TOOLCHAIN="/home/sunil/UBERTC-arm-eabi-8.2.1/bin/arm-linux-gnueabi-"
+TOOLCHAIN="/home/jeferson/toolchain/bin/arm-eabi-"
 
 ARCHITECTURE="arm"
 
@@ -42,7 +42,7 @@ KERNEL_NAME="SmartPack-Kernel"
 
 KERNEL_VARIANT="osprey"	# please leave as such
 
-KERNEL_VERSION="beta-v8"   # leave as such, if no specific version tag
+KERNEL_VERSION="beta-v10.1"   # leave as such, if no specific version tag
 
 KERNEL_DEFCONFIG="osprey_defconfig"
 
@@ -58,7 +58,7 @@ RELEASE_DIR="release_SmartPack"
 
 PREPARE_RELEASE=""
 
-NUM_CPUS=""   # number of cpu cores used for build (leave empty for auto detection)
+NUM_CPUS="1"   # number of cpu cores used for build (leave empty for auto detection)
 
 # ***** ***** ***** ***** ***THE END*** ***** ***** ***** ***** #
 
@@ -70,9 +70,9 @@ export ARCH=$ARCHITECTURE
 
 export CROSS_COMPILE="${CCACHE} $TOOLCHAIN"
 
-export KBUILD_BUILD_USER=SmartPack-Kernel-[sunilpaulmathew
+export KBUILD_BUILD_USER=SmartPack-Kernel-[jro1979
 
-export KBUILD_BUILD_HOST=xda-developers.com]
+export KBUILD_BUILD_HOST=arch-linux_x64]
 
 if [ -z "$NUM_CPUS" ]; then
 	NUM_CPUS=`grep -c ^processor /proc/cpuinfo`
