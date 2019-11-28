@@ -2,7 +2,7 @@
 # SmartPack-Kernel Boot Script
 # 
 # Author: sunilpaulmathew <sunil.kde@gmail.com>
-#
+# Maintaine: Jeferson Rodrigo de Oliveira <jroliveira.oliveira301@gmail.com>
 
 #
 # This script is licensed under the terms of the GNU General Public 
@@ -18,7 +18,7 @@
 #
 
 # SmartPack-Kernel default settings
-# Huge thanks to DanGLES3 @ xda-developers.com
+# Huge thanks to DanGLES3 @ xda-developers.com & sunilpaulmathew <sunil.kde@gmail.com>
 
 on boot
     # CPU core control
