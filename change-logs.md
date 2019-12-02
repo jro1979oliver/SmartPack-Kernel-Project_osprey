@@ -1,6 +1,25 @@
 # Change-logs
+## 10.  Dec 02, 2019
+*Release status: beta-v10.4*
+jro1979oliver - smartpack: fixes for build adreno idler
+sunilpaulmathew - devfreq: enable adreno_idler
+linckandrea - adreno_idler: clean-up and enable it by default
+Joe Maples - adreno_idler: Declare display_on correctly
+Joe Maples - adreno_idler: Add display state awareness
+Joe Maples - adreno idler: Ramp down more agressively
+arter97 - adreno_idler: fix typos :)
+arter97 - adreno_idler: fix-up some comments
+arter97 - adreno_idler: fix-up type definitions
+arter97 - adreno_idler: remove frequency bump
+arter97 - adreno_idler: switch to count based instead of time based
+arter97 - Introduce Adreno idler for devfreq-based Adreno devices
+jro1979oliver - Revert "Added support for Adreno IDLER"
+jro1979oliver - smartpack: up a tag
+Sultan Qasim Khan - msm8916: Mild undervolt
+Sultan Qasim Khan - msm8939: mild undervolt for heat reduction
+jro1979oliver - Revert "cpuset: Add allow_attach hook for cpusets on android."
 
-## 8. Oct 13, 2019
+## 9. Oct 13, 2019
 *Release status: beta-v9*
 Changes: Compatible with Oreo, Pie and Q. Added memfd backports.Compiled with kernel toolchain 8.3-2019.03 
 
