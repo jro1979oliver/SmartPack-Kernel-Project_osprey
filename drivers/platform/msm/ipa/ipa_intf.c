@@ -562,6 +562,8 @@ ssize_t ipa_read(struct file *filp, char __user *buf, size_t count,
 						break;
 					}
 				} else {
+				if (copy_to_user(buf, msg->buff,
+						  msg->meta.msg_len)) {
 					kfree(msg);
 					msg = NULL;
 					ret = -EFAULT;

@@ -1167,18 +1167,6 @@ int32_t msm_sensor_driver_probe(void *setting,
 
 	pr_err("%s probe succeeded", slave_info->sensor_name);
 
-	if (slave_info->sensor_init_params.sensor_otp.enable) {
-		/* Read OTP */
-		rc = msm_sensor_read_otp(s_ctrl);
-		if (rc < 0)
-			pr_err("%s OTP read failed", slave_info->sensor_name);
-	} else if (slave_info->sensor_init_params.sensor_otp.eeprom_enable) {
-		/* read eeprom */
-		msm_sensor_read_eeprom(s_ctrl);
-		if (rc < 0)
-			pr_err("%s eeprom read failed",
-				slave_info->sensor_name);
-	}
 	/*
 	 * Update the subdevice id of flash-src based on availability in kernel.
 	 */

@@ -34,7 +34,7 @@
 #
 # ***** ***** *Variables to be configured manually* ***** ***** #
 
-TOOLCHAIN="/home/jeferson/toolchain/bin/arm-eabi-"
+TOOLCHAIN="/home/jeferson/prebuilts_gcc_linux-x86_arm_arm-eabi-8.3/bin/arm-eabi-"
 
 ARCHITECTURE="arm"
 

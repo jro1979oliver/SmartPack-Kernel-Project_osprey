@@ -1,4 +1,4 @@
-/* Copyright (c) 2011-2015, The Linux Foundation. All rights reserved.
+/* Copyright (c) 2011-2015, 2018 The Linux Foundation. All rights reserved.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2 and
@@ -107,7 +107,7 @@ int wcnss_get_wlan_nv_name(char nv_name[WLAN_NV_NAME_SIZE]);
 void wcnss_allow_suspend(void);
 void wcnss_prevent_suspend(void);
 int wcnss_hardware_type(void);
-void *wcnss_prealloc_get(unsigned int size);
+void *wcnss_prealloc_get(size_t size);
 int wcnss_prealloc_put(void *ptr);
 void wcnss_reset_intr(void);
 void wcnss_reset_fiq(bool clk_chk_en);
