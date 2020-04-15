@@ -78,7 +78,7 @@ if [ -f /tmp/anykernel/version ]; then
   ui_print " ";
 fi;
 ui_print " ";
-ui_print "...(c) sunilpaulmathew@xda-developers.com...";
+ui_print "...(c) jro1979@xda-developers.com...";
 ui_print " ";
 ui_print " ";
 

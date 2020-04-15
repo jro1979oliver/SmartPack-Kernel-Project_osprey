@@ -1,0 +1,155 @@
+Project: 
+Pranav Vashi - msm8916: gpu: Add UC/OC frequencies
+dev-harsh1998 - msm: simple: thermal: 5 throttling steps are enough for msm8916
+dev-harsh1998 - msm: simple: thermal: just directly push the freq since its not an array
+Sultanxda - msm: thermal: simple: Fix incorrect notifier priority
+RJ Trujillo - msm: thermal: simple: Backport to 3.10
+Sultanxda - msm: thermal: simple: Ensure validate_cpu_freq() only uses valid freqs
+dev-harsh1998 - msm: thermal: simple: redo the get_throttle_freq & set_throttle_freq logic again
+Sultanxda - msm: thermal: simple: Restore the user's maxfreq after throttling
+Sultanxda - msm: thermal: simple: Make get_valid_cpufreq() usage hotplug-safe
+dev-harsh1998 - msm: simple: thermal: adapt get_throttle_freq logic for non bLE
+Sultanxda - [BACKPORT]msm: thermal: simple: Make worker and notifier logic more robust
+Sultanxda - [BACKPORT]msm: thermal: simple: Remove user_maxfreq feature
+dev-harsh1998 - thermal: msm: simple: always validate freq before setting it
+dev-harsh1998 - defconfig: osprey: switch to simple thermal driver
+dev-harsh1998 - dts: msm8916: Implement support for simple thermal
+dev-harsh1998 - simple: thermal: msm8916 is an simple non cluster implementation
+Sultanxda - msm: thermal: simple: Fix checkpatch.pl warnings and errors
+Sultanxda - msm: thermal: simple: Validate throttle frequencies
+Sultanxda - msm: thermal: simple: Remove TSENS dependency
+Sultanxda - msm: thermal: simple: Increase max. number of thermal zones to 12
+Sultanxda - msm: thermal: simple: Add support for individual freqs per cluster
+Sultanxda - msm: thermal: simple: Remove WQ_NON_REENTRANT
+Sultanxda - msm: thermal: simple: Fix lack of throttling when temp suddenly jumps
+Sultanxda - msm: thermal: simple: Remove unnecessary continue
+Sultanxda - msm: thermal: simple: Use fixed-width integer types for local variables
+Sultanxda - msm: thermal: simple: Add support for 8 thermal throttle zones
+Sultanxda - msm: thermal: simple: Refactor code style
+Sultanxda - msm: thermal: simple: Set minfreq to maxfreq if minfreq > maxfreq
+Sultanxda - msm: thermal: simple: Remove inefficient code
+Sultanxda - msm: thermal: simple: Use VADC device for temperature polling
+Sultanxda - msm: thermal: simple: Clean up some variable naming
+Sultanxda - msm: thermal: simple: Add sysfs node to manually control maxfreq
+Sultanxda - msm: thermal: simple: Remove unnecessary check
+Sultanxda - thermal: msm: simple: Clean up 'enabled' sysfs node
+Sultanxda - thermal: msm: simple: Fix on/off switch
+Sultanxda - thermal: Add simple standalone MSM thermal solution
+flar2 - drivers: mmc: tune em' all!!
+Sultanxda - mmc: clk_scaling: Fix scale_down_in_low_wr_load sysfs return value
+Jake Weinstein - mmc: sdhci-msm: Complete porting the patch
+Sayali Lokhande - mmc: sdhci-msm: Disable controller clocks in suspend
+Albert I - staging: prima: Ensure compatibility with GCC 6+
+Adithya R - Makefile: Build kernel with O3
+Sultan Alsawaf - Makefile: Disable stack conservation for GCC
+Gaoxiang Chen - msm: camera: fix off-by-one overflow in msm_isp_get_bufq
+Pranav Vashi - msm: camera: isp: Add missing mutex unlock
+cb - msm: camera: sensor: Fix error check to allow multi init
+Sultanxda - msm: camera: sensor: Fix memory leaks when sensor probe fails
+Xu Han - msm: camera: sensor: change loop index to int type
+Biswajit Paul - msm: camera: Fix memory read by adding bounds check
+Pranav Vashi - msm: camera: isp: Ratelimit hw errors
+Alok Kediya - msm: camera: Bound check for num_of_stream.
+Ranjith Kagathi Ananda - msm: ispif: Remove handling of SD_SHUTDOWN
+Ariel Yin - msm: cpp: Fix for integer overflow in cpp
+Siqi Lin - BACKPORT: msm: camera: Avoid exposing kernel addresses
+Adithya R - msm: mdss_fb: Remove unused function
+Mohammed Javid - msm:ipa:Prevent rt rule deletion if rt rule id is invalid
+Paul E. McKenney - fs/sync: Make sync() satisfy many requests with one invocation
+Anna-Maria Gleixner - hrtimer: Ensure POSIX compliance (relative CLOCK_REALTIME hrtimers)
+Viresh Kumar - nohz: Avoid tick's double reprogramming in highres mode
+Viresh Kumar - tick-sched: Don't call update_wall_time() when delta is lesser than tick_period
+Thomas Gleixner - nohz: Fix !HIGH_RES_TIMERS hang
+John Stultz - clocksource: Fix abs() usage w/ 64bit values
+Thomas Gleixner - timekeeping: Simplify arch_gettimeoffset()
+Greg Hackmann - alarmtimer: don't rate limit one-shot timers
+Thomas Gleixner - alarmtimer: Rate limit periodic intervals
+Richard Larocque - alarmtimer: Return relative times in timer_gettime
+dev-harah1998 - mm: Tune process reclaim
+Mohammed Javid - [BACKPORT]msm: ipa: Fix use after free issue
+NeilBrown - workqueue: allow rescuer thread to do more work.
+Archana Sathyakumar - power: qcom: ea: Fix uninitialized temperature and cpu variable
+Alexander Shishkin - perf/core: Don't leak event in the syscall error path
+Tomoms - mm: enable laptop mode by default
+Sami Tolvanen - soc: qcom: smp2p: fix __iomem access in SMP2P_{GET,SET}_*
+Yi-wei Zhao - arm: idle: add missing need_resched check
+Mark Reed - drivers: base: close firmware file after use
+Prasad Sodagudi - sched: Add a check for cpu unbound deferrable timers
+Ben Hutchings - workqueue: Fix flag collision
+Andi Kleen - kernek/fork.c: allocate idle task for a CPU always on its local node
+Rasmus Villemoes - lib/string.c: improve strrchr()
+Sultan Alsawaf - treewide: Fix code errors detected using GCC 8.1.0
+Sultanxda - ASoC: core: Don't assign an out-of-bounds address to rtd_aux
+Alok Chauhan - platform: msm: msm_bus: Address memory leak during client registration
+Alok Chauhan - msm: msm_bus: Improve defensive checks for arb driver
+Mohan Srinivasan - ANDROID: keychord: Fix for a memory leak in keychord.
+zhong jiang - mm,ksm: add __GFP_HIGH to the allocation in alloc_stable_node()
+Zhou Chengming - ksm: fix conflict between mmput and scan_get_next_rmap_item
+Minchan Kim - mm/ksm.c: mark stable page dirty
+Geliang Tang - mm/ksm.c: use list_for_each_entry_safe
+Andrea Arcangeli - ksm: unstable_tree_search_insert error checking cleanup
+Andrea Arcangeli - ksm: use find_mergeable_vma in try_to_merge_with_ksm_page
+Andrea Arcangeli - ksm: use the helper method to do the hlist_empty check
+Andrea Arcangeli - ksm: don't fail stable tree lookups if walking over stale stable_nodes
+Joe Perches - ksm: remove redundant __GFP_ZERO from kcalloc
+Naseer Ahmed - mdss: Do not wait for kickoff in display commit
+Arnd Bergmann - kbuild: move -Wunused-const-variable to W=1 warning level
+dev-harsh1998 - Makefile: suppress some imbecile warnings
+tejas - gpu: msm: Add optimization flags
+Parvinder Singh - msm_performance: disable tracing
+psndna88 - drivers/gpu/msm: disable adreno irq tracing
+psndna88 - prima: disable tracing
+psndna88 - msm_thermal: disable tracing
+psndna88 - block/blk-core: disable tracing
+psndna88 - drivers/usb/host: Disable tracing
+Parvinder Singh - proc: Also kill miui camera in background
+celtare21 - proc: Also kill Snapcam
+Sultan Alsawaf - proc: Don't let Google Camera and Settings run in the background
+Sumit Singh - arm: atomic.h: defined relaxed atomic_read
+Sumit Singh - asm-generic: atomic.h: relaxed atomic_read
+Harsh Shandilya - tcp_westwood : Tune-up
+Adithya R - adreno_idler: Make less aggressive
+Kyle Harrison - osprey: Regenerate defconfig and disable some debugging
+Tyler Nijmeh - fs: compat: Disable logging by default
+Yasir-Siddiqui - lowmemorykiller: disable debug
+Tyler Nijmeh - irq: spurious: Disable IRQ debugging by default
+Parvinder Singh - sdcardfs: disable debug
+Sultanxda - workqueue: Schedule workers on CPU0 or CPU0/CPU1 by default
+kerneltoast - usb: dwc3-msm: Remove indefinite wakeup
+Sultan Alsawaf - mm: kmemleak: Don't die when memory allocation fails
+Sultan Alsawaf - dmaengine: Fix memory leak in dma_async_device_register
+Sultan Alsawaf - qos: Don't allow userspace to impose restrictions on CPU idle levels
+psndna88 - usb: kill "Error: returning -512 value" in log when system suspend
+Raymond Golo (intersectRaven) - arm/arm64: smp: Prevent reschedule on offline CPU
+franciscofranco - mdss: use an interruptible thread on edp to reduce load_average
+Jeevan Shriram - msm: mdss: reduce log level when ping pong timeout happens
+Nathan Chancellor - drivers: qcom: peripheral-loader: quiet
+Sultanxda - trace: Don't force tracing support by default
+Riley Andrews - Turn off trace_printk in vidc's dprink.
+Josh Choo - Android.bp: Adapt to work with OUT_DIR absolute paths
+Adithya R - scripts: Fix install_headers.sh permissions
+Alberto97 - Android.bp: Fix qseecom-kernel-headers build
+David Ng - Android.bp: Initial header export bp for Android (qseecom only)
+Johannes Berg - BACKPORT: ipv6: add option to drop unsolicited neighbor advertisements
+Johannes Berg - BACKPORT: ipv6: add option to drop unicast encapsulated in L2 multicast
+Johannes Berg - BACKPORT: ipv4: add option to drop gratuitous ARP packets
+Johannes Berg - BACKPORT: ipv4: add option to drop unicast encapsulated in L2 multicast
+Charles Keepax - ASoC: wm_adsp: Avoid attempt to free buffers that might still be in  use
+Kyle Harrison - Revert "ASoC: wm_adsp: Avoid attempt to free buffers that might still be in use"
+FireLord1 - arm: TuneUps and Optimizations for Cortex-A53/ARMv8 architecture
+psndna88 - faux sound control 3: make defult OFF
+Fabien Parent - ARM: dts: da850-evm: fix read access to SPI flash
+Vladimir Zapolskiy - ARM: dts: imx31: fix AVIC base address
+Vladimir Zapolskiy - ARM: dts: imx31: move CCM device node to AIPS2 bus devices
+Vladimir Zapolskiy - ARM: dts: imx31: fix clock control module interrupts description
+Philippe Reynes - ARM: dts: imx27: only map 4 Kbyte for fec registers
+Gregory CLEMENT - ARM: mvebu: armada-xp-openblocks-ax3-4: Disable internal RTC
+Stefan Wahren - ARM: dts: imx23-olinuxino: Fix dr_mode of usb0
+Marek Vasut - ARM: dts: imx28: Fix AUART4 TX-DMA interrupt name
+Markus Pargmann - ARM: dts: imx25: Add #pwm-cells to pwm4
+Sebastian Hesselbarth - ARM: dts: dove: Fix uart[23] reg property
+Fabio Estevam - ARM: dts: imx25: Fix PWM "per" clocks
+Fabio Estevam - ARM: dts: imx25: Fix the SPI1 clocks
+Ramsudharsan - msm8x16: sound: add missing qcom,msm-mclk-freq in dt
+Ahmed Hady - merging with caf/3.10 msm8916 dtb
+
